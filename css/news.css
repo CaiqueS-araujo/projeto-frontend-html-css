@@ -1,0 +1,28 @@
+@import url("./nasa.css");
+
+.noticias {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+
+  margin-top: 30px;
+}
+
+.noticia {
+
+  background: rgba(255,255,255,0.1);
+
+  padding: 20px;
+
+  border-radius: 20px;
+}
+
+.noticia a {
+
+  color: #60a5fa;
+
+  text-decoration: none;
+}

@@ -1,0 +1,212 @@
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+/* BODY */
+
+body {
+
+  font-family: Arial, sans-serif;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  color: white;
+
+  background-image:
+  linear-gradient(
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.6)
+  ),
+
+  url("../img/fundo.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+  padding: 20px;
+}
+
+/* CONTAINER */
+
+.container {
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+/* CARD */
+
+.card-clima {
+
+  background: rgba(255,255,255,0.1);
+
+  backdrop-filter: blur(12px);
+
+  border-radius: 30px;
+
+  padding: 40px;
+
+  width: 100%;
+
+  max-width: 900px;
+
+  text-align: center;
+
+  box-shadow:
+  0 0 30px rgba(0,0,0,0.4);
+}
+
+/* TITULO */
+
+.card-clima h1 {
+
+  font-size: 50px;
+
+  margin-bottom: 10px;
+}
+
+/* SUBTITULO */
+
+.subtitulo {
+
+  color: #d1d5db;
+
+  margin-bottom: 40px;
+
+  font-size: 18px;
+}
+
+/* TEMPERATURA */
+
+.temp {
+
+  font-size: 70px;
+
+  font-weight: bold;
+
+  margin: 20px 0;
+}
+
+/* PREVISÃO */
+
+.previsao {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+
+  margin-top: 40px;
+}
+
+/* CARD DOS DIAS */
+
+.dia {
+
+  background: rgba(255,255,255,0.1);
+
+  border-radius: 20px;
+
+  padding: 20px;
+
+  min-width: 140px;
+
+  transition: 0.3s;
+}
+
+.dia:hover {
+
+  transform: scale(1.05);
+
+  background: rgba(255,255,255,0.15);
+}
+
+/* IMAGENS */
+
+img {
+
+  width: 64px;
+}
+
+/* BOTÃO */
+
+button {
+
+  margin-top: 40px;
+
+  padding: 15px 30px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  background: rgba(37,99,235,0.8);
+
+  color: white;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+button:hover {
+
+  transform: scale(1.05);
+
+  background: rgba(59,130,246,1);
+
+  box-shadow:
+  0 0 20px rgba(59,130,246,0.7);
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+
+  .card-clima {
+
+    padding: 30px 20px;
+  }
+
+  .card-clima h1 {
+
+    font-size: 36px;
+  }
+
+  .temp {
+
+    font-size: 50px;
+  }
+
+  .dia {
+
+    width: 100%;
+  }
+
+}

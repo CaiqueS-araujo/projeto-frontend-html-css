@@ -1,0 +1,617 @@
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+
+  font-family: 'Segoe UI', sans-serif;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  overflow-x: hidden;
+
+  color: white;
+
+  background:
+  radial-gradient(circle at top,
+  #1e3a8a 0%,
+  #0f172a 40%,
+  #020617 100%);
+
+  padding: 20px;
+}
+
+/* PARTÍCULAS */
+
+#particles-js {
+
+  position: fixed;
+
+  width: 100%;
+
+  height: 100%;
+
+  top: 0;
+
+  left: 0;
+
+  z-index: 0;
+}
+
+/* GLOW */
+
+body::after {
+
+  content: "";
+
+  position: fixed;
+
+  width: 300px;
+
+  height: 300px;
+
+  background: rgba(59,130,246,0.15);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  transform: translate(-50%, -50%);
+
+  filter: blur(80px);
+
+  z-index: 0;
+
+  left: var(--x);
+
+  top: var(--y);
+}
+
+/* CONTAINER */
+
+.container {
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+/* CARD */
+
+.card {
+
+  width: 100%;
+
+  max-width: 1100px;
+
+  padding: 50px 40px;
+
+  border-radius: 35px;
+
+  background:
+  rgba(255,255,255,0.08);
+
+  border:
+  1px solid rgba(255,255,255,0.1);
+
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+  0 8px 40px rgba(0,0,0,0.4);
+
+  text-align: center;
+
+  animation: fade 1s ease;
+}
+
+/* ANIMAÇÃO */
+
+@keyframes fade {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(20px);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* TITULOS */
+
+h1 {
+
+  font-size: 60px;
+
+  margin-bottom: 20px;
+}
+
+.subtitulo {
+
+  font-size: 20px;
+
+  color: #cbd5e1;
+
+  margin-bottom: 40px;
+}
+
+/* BOTÕES */
+
+button {
+
+  width: 100%;
+
+  max-width: 350px;
+
+  padding: 18px;
+
+  border: none;
+
+  border-radius: 60px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #2563eb,
+    #3b82f6
+  );
+
+  color: white;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.35s;
+
+  box-shadow:
+  0 10px 25px rgba(37,99,235,0.4);
+}
+
+button:hover {
+
+  transform:
+  translateY(-5px)
+  scale(1.02);
+
+  box-shadow:
+  0 15px 35px rgba(59,130,246,0.6);
+}
+
+/* IMAGENS */
+
+img {
+
+  max-width: 100%;
+
+  border-radius: 20px;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+
+  .card {
+
+    padding: 35px 20px;
+  }
+
+  h1 {
+
+    font-size: 40px;
+  }
+
+  .subtitulo {
+
+    font-size: 17px;
+  }
+
+  button {
+
+    font-size: 16px;
+  }
+
+}
+/* NOTICIAS */
+
+#noticias {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 30px;
+
+  margin-top: 30px;
+}
+
+.noticia {
+
+  background:
+  rgba(255,255,255,0.08);
+
+  border:
+  1px solid rgba(255,255,255,0.1);
+
+  border-radius: 25px;
+
+  padding: 25px;
+
+  text-align: left;
+
+  transition: 0.3s;
+}
+
+.noticia:hover {
+
+  transform: translateY(-5px);
+
+  background:
+  rgba(255,255,255,0.12);
+}
+
+.noticia img {
+
+  width: 100%;
+
+  max-height: 300px;
+
+  object-fit: cover;
+
+  border-radius: 20px;
+
+  margin-bottom: 20px;
+}
+
+.noticia h2 {
+
+  margin-bottom: 15px;
+
+  font-size: 28px;
+}
+
+.noticia p {
+
+  color: #cbd5e1;
+
+  line-height: 1.7;
+
+  margin-bottom: 20px;
+}
+
+.noticia a {
+
+  color: #60a5fa;
+
+  text-decoration: none;
+
+  font-weight: bold;
+}
+/* CLIMA */
+
+.clima-atual {
+
+  margin-top: 30px;
+}
+
+.icone-clima {
+
+  width: 120px;
+
+  margin: 20px 0;
+}
+
+.temperatura {
+
+  font-size: 90px;
+
+  margin-bottom: 10px;
+}
+
+.descricao {
+
+  font-size: 22px;
+
+  color: #cbd5e1;
+
+  margin-bottom: 40px;
+}
+
+/* INFO GRID */
+
+.info-grid {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 50px;
+}
+
+.info-box {
+
+  background:
+  rgba(255,255,255,0.08);
+
+  border:
+  1px solid rgba(255,255,255,0.1);
+
+  padding: 25px;
+
+  border-radius: 25px;
+
+  width: 180px;
+
+  transition: 0.3s;
+}
+
+.info-box:hover {
+
+  transform: translateY(-5px);
+}
+
+.info-box p {
+
+  margin: 10px 0;
+
+  color: #cbd5e1;
+}
+
+/* PREVISÃO */
+
+.titulo-previsao {
+
+  margin-bottom: 30px;
+}
+
+.previsao-grid {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+/* CARD DIA */
+
+.dia-card {
+
+  background:
+  rgba(255,255,255,0.08);
+
+  border:
+  1px solid rgba(255,255,255,0.1);
+
+  padding: 25px;
+
+  border-radius: 25px;
+
+  width: 180px;
+
+  transition: 0.3s;
+}
+
+.dia-card:hover {
+
+  transform:
+  translateY(-5px)
+  scale(1.02);
+
+  background:
+  rgba(255,255,255,0.12);
+}
+
+.dia-card h3 {
+
+  margin-bottom: 15px;
+}
+
+.dia-card img {
+
+  width: 70px;
+
+  margin: 15px 0;
+}
+
+.dia-card p {
+
+  color: #cbd5e1;
+
+  margin-bottom: 15px;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+
+  .temperatura {
+
+    font-size: 60px;
+  }
+
+  .descricao {
+
+    font-size: 18px;
+  }
+
+  .info-box {
+
+    width: 100%;
+  }
+
+  .dia-card {
+
+    width: 100%;
+  }
+
+}
+/* BIOMEDICINA */
+
+#biomedNoticias {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 30px;
+
+  margin-top: 40px;
+}
+
+/* CARD */
+
+.biomed-card {
+
+  display: flex;
+
+  gap: 25px;
+
+  align-items: center;
+
+  background:
+  rgba(255,255,255,0.08);
+
+  border:
+  1px solid rgba(255,255,255,0.1);
+
+  border-radius: 30px;
+
+  padding: 25px;
+
+  transition: 0.3s;
+
+  backdrop-filter: blur(10px);
+}
+
+.biomed-card:hover {
+
+  transform:
+  translateY(-6px)
+  scale(1.01);
+
+  background:
+  rgba(255,255,255,0.12);
+
+  box-shadow:
+  0 10px 30px rgba(59,130,246,0.2);
+}
+
+/* IMAGEM */
+
+.biomed-card img {
+
+  width: 300px;
+
+  height: 200px;
+
+  object-fit: cover;
+
+  border-radius: 25px;
+}
+
+/* CONTEUDO */
+
+.biomed-conteudo {
+
+  flex: 1;
+
+  text-align: left;
+}
+
+.biomed-conteudo h2 {
+
+  font-size: 30px;
+
+  margin-bottom: 20px;
+}
+
+.biomed-conteudo p {
+
+  color: #cbd5e1;
+
+  line-height: 1.7;
+
+  margin-bottom: 20px;
+
+  font-size: 17px;
+}
+
+/* LINK */
+
+.biomed-conteudo a {
+
+  color: #60a5fa;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.biomed-conteudo a:hover {
+
+  color: #93c5fd;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+
+  .biomed-card {
+
+    flex-direction: column;
+  }
+
+  .biomed-card img {
+
+    width: 100%;
+
+    height: auto;
+  }
+
+  .biomed-conteudo {
+
+    text-align: center;
+  }
+
+  .biomed-conteudo h2 {
+
+    font-size: 24px;
+  }
+
+}
