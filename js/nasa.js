@@ -1,41 +1,68 @@
 async function traduzirTexto(texto) {
 
-  const url =
-  `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=pt&dt=t&q=${encodeURIComponent(texto)}`;
+  try {
 
-  const resposta = await fetch(url);
+    const url =
+      `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=pt&dt=t&q=${encodeURIComponent(texto)}`;
 
-  const dados = await resposta.json();
+    const resposta = await fetch(url);
 
-  return dados[0].map(item => item[0]).join("");
+    if (!resposta.ok) {
+      throw new Error("Erro na tradução");
+    }
+
+    const dados = await resposta.json();
+
+    return dados[0].map(item => item[0]).join("");
+
+  } catch (erro) {
+
+    console.log("Erro ao traduzir:", erro);
+
+    // retorna texto original
+    return texto;
+  }
 }
 
 async function buscarNASA() {
 
-  const url =
-  "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY";
+  try {
 
-  const resposta = await fetch(url);
+    const url =
+      "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY";
 
-  const dados = await resposta.json();
+    const resposta = await fetch(url);
 
-  // TRADUZIR
+    if (!resposta.ok) {
+      throw new Error("Erro API NASA");
+    }
 
-  const tituloTraduzido =
-  await traduzirTexto(dados.title);
+    const dados = await resposta.json();
 
-  const textoTraduzido =
-  await traduzirTexto(dados.explanation);
+    const tituloTraduzido =
+      await traduzirTexto(dados.title);
 
-  document.getElementById("resultado").innerHTML = `
+    const textoTraduzido =
+      await traduzirTexto(dados.explanation);
 
-    <h2>${tituloTraduzido}</h2>
+    document.getElementById("resultado").innerHTML = `
 
-    <img src="${dados.url}">
+      <h2>${tituloTraduzido}</h2>
 
-    <p>${textoTraduzido}</p>
+      <img src="${dados.url}" alt="Imagem NASA">
 
-  `;
+      <p>${textoTraduzido}</p>
+
+    `;
+
+  } catch (erro) {
+
+    console.log("Erro NASA:", erro);
+
+    document.getElementById("resultado").innerHTML = `
+      <p>Erro ao carregar conteúdo da NASA.</p>
+    `;
+  }
 }
 
 buscarNASA();
